@@ -11,25 +11,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="starterkit.css" />
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/requirejs/require.js" data-main="javascripts/app/main.js"></script>
   </head>
   <body>
   	<div id="applicationHost">
-    <div class="container-fluid">
+  	    <div class="container-fluid">
+  		<div id="page-host">
       <link href='https://fonts.googleapis.com/css?family=Poly' rel='stylesheet' type='text/css'>
-		<section id="colored">
+
+		<section id="colored" class="story">
 			<header class="row">
 				<h1 class="col-md-11 col-md-offset-1" data-bind="text: title"></h1>
 
 				<h2 class="col-md-11 col-md-offset-1" data-bind="text: author"></h2>
 
 				<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-3 col-lg-3 col-lg-offset-3">
-					<p class="entry-text" data-bind="html: storyElements[0]"></p>
-					<p class="entry-text" data-bind="html: storyElements[1]"></p>
+					<p class="entry-text" data-bind="html: storyElements()[0]"></p>
+					<p class="entry-text" data-bind="html: storyElements()[1]"></p>
 				</div>
 			</header>
 
@@ -58,46 +57,22 @@
 					<p class="">
 						Illustrated by: <span data-bind="text: illustrator"></span>
 					</p>
-					<p class="" data-bind="text: date"></p>
+					<p class=""> 
+						<span data-bind="text: date().month"></span> / <span data-bind="text: date().year"></span>
+					</p>
 				</div>
 
 				<div class="col-md-6">
 					A full online publication full of this shit is coming soon. Stay tuned.
 				</div>
 			</footer>
+
 		</section>
+
     </div>
 	</div>
+  </div>
 
-    <script>
-    	var ViewModel = function() {
-	        this.title = "Repetition";
-	    	this.author = "Michael Kransz";
-	        this.illustrator = "Joel Peven";
-	        this.producer = "Abraham Kim";
-	        this.date = "9/11/2015";
-	        this.tagline = "&ldquo;I want to hear you say that you’re mine&rdquo;";
-	        this.storyElements = [
-	            'A warm glow was cast on her face by the candle that sat on the nightstand next to the bed. The melted wax had dripped over.',
-	            'He caressed her face with one hand and held her close with the other. Their eyes locked with intention. Their lips met with heat. She broke apart.',
-	            '&ldquo;I love you,&rdquo; she said.',
-	            '&ldquo;What?&rdquo;',
-	            '&ldquo;I love you.&rdquo;',
-	            'He gripped her exposed waist and pulled her in tighter, his other hand firmly planted on her nape. With his lips he separated hers&mdash;pulling and biting at them and buying time for himself. He&rsquo;d seen the commercials, the movies and the shows. He&rsquo;d had other women. He knew his line. He didn&rsquo;t want to say his line. He didn&rsquo;t know why. They broke apart.',
-	            '&ldquo;I want to hear you say that you&rsquo;re mine,&rdquo; he said.',
-	            '&ldquo;I&rsquo;m yours.&rdquo;',
-	            'They kissed with heat.',
-	            '&ldquo;Tell me you&rsquo;re mine,&rdquo; he said.',
-	            '&ldquo;I&rsquo;m yours,&rdquo; she said, placing her arms around his neck.',
-	            'She parted to use the bathroom. He folded his hands behind his head on the pillow and watched her walk out of the room. That was good enough&mdash;an agreeable truth, not some all-or-nothing word.',
-	            'She was some years younger than him. Lately he felt the difference&mdash;some uncertain weight of wisdom not yet divined.',
-	            'He was brought back by the figure of a curvy silhouette motionless in the doorframe. He smiled in satisfaction at it. She came to him.',
-	            'The warm glow flickered and he saw a cloudiness in her eyes that absorbed her smile. She threw her arms back around his neck and said softly, &ldquo;I&rsquo;m yours.&rdquo;'
-        	];
-        };
-
-        ko.applyBindings(new ViewModel());
-    </script>
   </body>
 </html>
 

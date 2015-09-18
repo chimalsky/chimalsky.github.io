@@ -21,6 +21,7 @@ define(function(require) {
 
                     self.date(self.prettifyDate(post.date));
 
+                    self.displayPage();
                     self.removeInlineStyling();
                 } else {
                     alert(err);
@@ -52,6 +53,11 @@ define(function(require) {
                 year: split[0]
             };
             return pretty;
+        },
+
+        displayPage: function() {
+            document.getElementById('applicationHost').classList.remove('hidden');
+
         }
     });
 

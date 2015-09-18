@@ -12,8 +12,6 @@ define(function(require) {
             self.date = ko.observable({day: undefined, month: undefined, year: undefined});
 
             self.getPost(postId);
-        },
-        activate: function() {
         }
     });
 
